@@ -1,0 +1,13 @@
+/*
+ * Additional Themes
+ *
+ */
+
+/* Sapienza */
+.theme-sapienza .sidebar {
+  background-color: #822433;
+}
+.theme-sapienza .content a,
+.theme-sapienza .related-posts li a:hover {
+  color: #822433;
+}

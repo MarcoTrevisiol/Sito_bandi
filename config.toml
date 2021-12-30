@@ -1,5 +1,9 @@
 baseURL = 'http://example.org/'
-languageCode = 'en-us'
-title = 'My New Hugo Site'
+languageCode = 'it-it'
+title = 'Bandi Sapienza'
 theme = "hyde"
 
+
+[params]
+  themeColor = "theme-sapienza"
+  description = "Tema elegante, open source e responsive"
