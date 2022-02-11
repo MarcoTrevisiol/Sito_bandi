@@ -1,0 +1,18 @@
+{{ if (index . 0) }}
+    <article class="post">
+      <h2 class="post-title">
+        {{ index . 0 }}
+      </h2>
+      <span class="post-date">Scadenza: <time>{{ index . 4 }}</time></span>
+      <h3>Requisiti</h3>
+      <p>{{ index . 1 }}</p>
+      <h3>Tematica/settore</h3>
+      <p>{{ index . 2 }}</p>
+      <div class="read-more-link">
+        <a href="{{ index . 3 }}">Sito ufficiale</a>
+      </div>
+      {{ if (index . 5) }}
+        <p>{{ index . 5 }}</p>
+      {{ end }}
+    </article>
+{{ end }}

@@ -1,0 +1,7 @@
+{{ define "main" -}}
+<div class="posts">
+{{ range $.Site.Data.d -}}
+    {{ partial "bando.html" . }}
+{{- end }}
+</div>
+{{- end }}
