@@ -1,18 +1,16 @@
-{{ if (index . 0) }}
-    <article class="post">
-      <h2 class="post-title">
-        {{ index . 0 }}
-      </h2>
-      <span class="post-date">Scadenza: <time>{{ index . 4 }}</time></span>
-      <h3>Requisiti</h3>
-      <p>{{ index . 1 }}</p>
-      <h3>Tematica/settore</h3>
-      <p>{{ index . 2 }}</p>
-      <div class="read-more-link">
-        <a href="{{ index . 3 }}">Sito ufficiale</a>
-      </div>
-      {{ if (index . 5) }}
-        <p>{{ index . 5 }}</p>
-      {{ end }}
-    </article>
-{{ end }}
+<article class="post">
+  <h2 class="post-title">
+    {{ index . "CALL/BANDO" }}
+  </h2>
+  <span class="post-date">Scadenza: <time>{{ time.Format ":date_long" (index . "SCADENZA")  }}</time></span>
+  <h3>Requisiti</h3>
+  <p>{{ index . "REQUISITI" }}</p>
+  <h3>Tematica/settore</h3>
+  <p>{{ index . "TEMATICA /SETTORE" }}</p>
+  <div class="read-more-link">
+    <a href='{{ index . "LINK" }}'>URL ufficiale</a>
+  </div>
+  {{ if (index . "NOTE") }}
+    <p>{{ index . "NOTE" }}</p>
+  {{ end }}
+</article>

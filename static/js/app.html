@@ -1,0 +1,15 @@
+<hr>
+<article class="post" ng-repeat="k in bandi | orderBy:'SCADENZA'">
+  <h2 class="post-title">
+    {{ k['CALL/BANDO'] }}
+  </h2>
+  <span class="post-date">Scadenza: <time>{{ k['SHOW-SCADENZA'] }}</time></span>
+  <h3>Requisiti</h3>
+  <p>{{ k['REQUISITI'] }}</p>
+  <h3>Tematica/settore</h3>
+  <p>{{ k['TEMATICA /SETTORE'] }}</p>
+  <div class="read-more-link">
+    <a href="{{ k['LINK'] }}">URL ufficiale</a>
+  </div>
+  <p>{{ k['NOTE'] }}</p>
+</article>

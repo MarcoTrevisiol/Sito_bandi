@@ -1,5 +1,5 @@
 baseURL = 'http://example.org/'
-languageCode = 'it-it'
+defaultContentLanguage = 'it'
 title = 'Bandi Sapienza'
 theme = "hyde"
 
@@ -7,3 +7,9 @@ theme = "hyde"
 [params]
   themeColor = "theme-sapienza"
   description = "Tema elegante, open source e responsive"
+  empty = true
+  sheetsWebAppURL = "https://script.google.com/macros/s/AKfycbx1e7MAfZjX9Fyy_Eq_Klg3IbR9ubEzw4d6rju7AGtikzZaRb5zP7crPuvy3Q_NjOCD/exec"
+
+[caches.getjson]
+  dir = ":cacheDir/:project"
+  maxAge = "1000s"

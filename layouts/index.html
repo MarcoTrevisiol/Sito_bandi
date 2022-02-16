@@ -1,17 +1,18 @@
 {{ define "main" -}}
-{{ $url := "https://script.google.com/macros/s/AKfycbwbugbdP_-nfujc9nVqxTZV7fN4AUEMnyM6xeAYR0jJzfslyAKTId5YYBdXYxviUbo/exec" }}
-{{ $bandi := getJSON $url }}
-{{ $headers := index $bandi 0 }}
-{{ $strutt := slice }}
-{{ $p := index $bandi 1 }}
-{{ $t := dict }}
-{{ range $i, $e := $headers }}
-    {{ $t = merge $t (dict $e (index $p $i)) }}
-{{ end }}
 
-<div class="posts">
-{{ range after 1 $bandi -}}
-    {{ partial "bando.html" . }}
+{{ if not .Site.Params.empty -}}
+    <div class="posts">
+        <hr>
+        {{ $bandi := getJSON .Site.Param.sheetsWebAppURL -}}
+        {{ range sort $bandi.content "SCADENZA" -}}
+            {{ partial "bando.html" . }}
+            <hr>
+        {{- end }}
+    </div>
+{{- else -}}
+    <div class="posts" ng-app="app" ng-controller="AppController">
+        {{ readFile "static/js/app.html" | safeHTML }}
+    </div>
 {{- end }}
-</div>
+
 {{- end }}
