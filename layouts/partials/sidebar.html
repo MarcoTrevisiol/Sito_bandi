@@ -10,10 +10,16 @@
 
     <nav>
       <ul class="sidebar-nav">
-        <li><a href="{{ .Site.BaseURL }}">Home</a> </li>
+        <!-- <li><a href="{{ .Site.BaseURL }}">Home</a> </li>
         {{ range .Site.Menus.main -}}
           <li><a href="{{.URL}}"> {{ .Name }} </a></li>
-        {{- end }}
+        {{- end }} -->
+        {{- if .Site.Params.empty -}}
+        <li>
+            <input type="checkbox" name="showExpired" ng-model="showExpired">
+            <label for="showExpired">Mostra anche bandi scaduti</label>
+        </li>
+        {{- end -}}
       </ul>
     </nav>
 

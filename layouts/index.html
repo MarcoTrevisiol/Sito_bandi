@@ -1,18 +1,20 @@
 {{ define "main" -}}
 
-{{ if not .Site.Params.empty -}}
-    <div class="posts">
-        <hr>
+<div class="posts">
+    {{ if not .Site.Params.empty -}}
         {{ $bandi := getJSON .Site.Param.sheetsWebAppURL -}}
+        <hr>
         {{ range sort $bandi.content "SCADENZA" -}}
             {{ partial "bando.html" . }}
             <hr>
         {{- end }}
-    </div>
-{{- else -}}
-    <div class="posts" ng-app="app" ng-controller="AppController">
+    {{- else -}}
+        {{ $string := (printf "var webAppURL = '%s';\n" (.Param "sheetsWebAppURL")) }}
+        {{ $targetPath := "js/vars.js" }}
+        {{ $vars := $string | resources.FromString $targetPath }}
+        {{ $createResource := $vars.Permalink }}
         {{ readFile "static/js/app.html" | safeHTML }}
-    </div>
-{{- end }}
+    {{- end }}
+</div>
 
 {{- end }}

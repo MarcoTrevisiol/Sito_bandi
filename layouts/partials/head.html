@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"{{with .Site.LanguageCode}} xml:lang="{{.}}" lang="{{.}}"{{end}}>
+<html xmlns="http://www.w3.org/1999/xhtml"{{with .Site.LanguageCode}} xml:lang="{{.}}" lang="{{.}}"{{end}}
+    {{- if .Site.Params.empty}}ng-app="app" ng-controller="AppController"{{end -}}
+>
 <head>
   <link href="https://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
@@ -28,6 +30,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.js"></script>
   <script src="https://momentjs.com/downloads/moment-with-locales.min.js"></script>
   <script src="js/app.js"></script>
+  <script src="js/vars.js"></script>
   {{- end }}
 
 

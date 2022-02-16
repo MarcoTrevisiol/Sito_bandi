@@ -1,9 +1,9 @@
-<hr>
-<article class="post" ng-repeat="k in bandi | orderBy:'SCADENZA'">
+<p ng-show="visibility">Caricamento...</p>
+<article class="post" ng-repeat="k in bandi | filter: notExpired | orderBy:'SCADENZA'">
   <h2 class="post-title">
     {{ k['CALL/BANDO'] }}
   </h2>
-  <span class="post-date">Scadenza: <time>{{ k['SHOW-SCADENZA'] }}</time></span>
+  <span class="post-date">Scadenza: <time>{{ k['DISPLAY-SCADENZA'] }}</time></span>
   <h3>Requisiti</h3>
   <p>{{ k['REQUISITI'] }}</p>
   <h3>Tematica/settore</h3>
@@ -11,5 +11,6 @@
   <div class="read-more-link">
     <a href="{{ k['LINK'] }}">URL ufficiale</a>
   </div>
-  <p>{{ k['NOTE'] }}</p>
+  <small>{{ k['NOTE'] }}</small>
+  <hr>
 </article>

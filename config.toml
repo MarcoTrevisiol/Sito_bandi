@@ -3,6 +3,7 @@ defaultContentLanguage = 'it'
 title = 'Bandi Sapienza'
 theme = "hyde"
 
+[taxonomies]
 
 [params]
   themeColor = "theme-sapienza"
